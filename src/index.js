@@ -1,12 +1,17 @@
 import './style.scss';
 
 const todoInput = document.querySelector('#todoInput');
-const todoAddBtn = document.querySelector('#todoAddBtn');
 const todoList = document.querySelector('.todoList');
-const todoClearBtn = document.querySelector('#todoClearBtn');
+const todoForm = document.querySelector('.todoForm');
 
 
-function addtodoLi() {
+todoForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  if (!todoInput.value) {
+    return;
+  }
+
   const todoLi = document.createElement('LI');
   todoLi.innerHTML = `
   <span>${todoInput.value}</span>
@@ -14,36 +19,10 @@ function addtodoLi() {
   `;
   todoList.append(todoLi);
   todoInput.value = '';
-}
-
-
-todoAddBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-
-  if (!todoInput.value) {
-    return;
-  }
-
-  addtodoLi();
-});
-
-
-todoInput.addEventListener('keydown', (e) => {
-  if (e.code === 'Enter') {
-    e.preventDefault();
-
-    if (!todoInput.value) {
-      return;
-    }
-
-    addtodoLi();
-  }
 });
 
 
 todoList.addEventListener('click', (e) => {
-  e.preventDefault();
-
   if (!e.target.matches('.todoRemoveBtn')) {
     return;
   }
@@ -53,10 +32,8 @@ todoList.addEventListener('click', (e) => {
 });
 
 
-todoClearBtn.addEventListener('click', (e) => {
+todoForm.addEventListener('reset', (e) => {
   e.preventDefault();
 
-  const allTodoLi = document.querySelectorAll('.todoList > li');
-  allTodoLi.forEach((li) => li.remove());
-  todoInput.value = '';
+  todoList.innerHTML = '';
 });
