@@ -1,0 +1,23 @@
+{
+  "extends": ["eslint:recommended", "airbnb-base"],
+  "parserOptions": {
+    "ecmaVersion": 11
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2020": true
+  },
+  "rules": {
+    "quotes": ["warn", "single"],
+    "linebreak-style": "off",
+    "no-unused-vars": "warn",
+    "indent": ["warn", 2],
+    "no-param-reassign": "warn",
+    "no-restricted-globals": "warn",
+    "arrow-body-style": "warn",
+    "no-plusplus": "off",
+    "no-multiple-empty-lines": ["warn", {"max": 2}]
+  },
+  "plugins": ["html"]
+}

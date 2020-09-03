@@ -7,8 +7,8 @@
     "build-prod": "webpack --mode production",
     "build-dev": "webpack --mode development",
     "start": "webpack-dev-server",
-    "lint": "eslint ./src/app",
-    "lint-fix": "eslint ./src/app --fix"
+    "lint": "eslint ./src",
+    "lint-fix": "eslint ./src --fix"
   },
   "author": "Roman",
   "license": "ISC",
