@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Do App</title>
+</head>
+<body>
+<form action="/" method="GET" class="todoForm">
+  <label for="todoInput" class="mainLabel">Todo items:</label>
+  <div class="inputElsContainer">
+    <input type="text" placeholder="Enter a todo item" id="todoInput">
+    <button id="todoAddBtn" type="submit">Add</button>
+  </div>
+  <div class="filtersContainer">
+    <fieldset>
+      <legend>Todo filters:</legend>
+      <input type="radio" name="todoFilter" id="filter1" value="all">
+      <label for="filter1">All</label>
+      <input type="radio" name="todoFilter" id="filter2" value="completed">
+      <label for="filter2">Completed</label>
+      <input type="radio" name="todoFilter" id="filter3" value="uncompleted">
+      <label for="filter3">Uncompleted</label>
+    </fieldset>
+  </div>
+  <ol class="todoList"></ol>
+  <div class="clearBtnContainer">
+    <button id="todoClearBtn" type="reset">Clear All</button>
+  </div>
+</form>
+</body>
+</html>

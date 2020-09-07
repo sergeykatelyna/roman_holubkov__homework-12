@@ -2,9 +2,10 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/code/index.js',
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
@@ -65,7 +66,7 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src/index.html'),
+      template: path.join(__dirname, 'src/code/index.html'),
       minify: {
         collapseWhitespace: true,
         removeComments: true,
@@ -77,6 +78,14 @@ module.exports = {
         conservativeCollapse: false,
       },
     }),
+    // new CopyWebpackPlugin({
+    //   patterns: [
+    //     {
+    //       from: path.join(__dirname, 'src/assets/img'),
+    //       to: path.join(__dirname, 'dist/assets/img'),
+    //     },
+    //   ],
+    // }),
     new MiniCssExtractPlugin(),
   ],
 };

@@ -14,8 +14,10 @@ todoForm.addEventListener('submit', (e) => {
 
   const todoLi = document.createElement('LI');
   todoLi.innerHTML = `
-  <span>${todoInput.value}</span>
-  <button type="button" class="todoRemoveBtn">&times;</button>
+    <input type="checkbox" class="todoDone">
+    <span>${todoInput.value}</span>
+    <button type="button" class="todoEditBtn">🖊️</button>
+    <button type="button" class="todoRemoveBtn">&times;</button>
   `;
   todoList.append(todoLi);
   todoInput.value = '';
