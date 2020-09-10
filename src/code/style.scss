@@ -15,7 +15,8 @@ button {
 }
 body {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   color: white;
 }
 button,
@@ -43,7 +44,7 @@ input {
   margin-top: 50px;
   padding: 10px;
   background-color: $dark;
-  .mainLabel {
+  > label:first-child {
     color: color.adjust($yellow-light, $lightness: 10%);
     text-shadow: 2px 2px 2px color.adjust($yellow-light, $lightness: -30%);
     font-size: 26px;
@@ -64,6 +65,34 @@ input {
   button {
     width: 80px;
     margin-left: 10px;
+  }
+}
+
+.filtersContainer {
+  text-align: center;
+  border: 2px groove $yellow-dark;
+  border-radius: 10px;
+  legend {
+    padding: 0 10px;
+    color: $yellow-light;
+    font-size: 18px;
+  }
+  input {
+    display: none;
+    &:checked + label {
+      border-color: $yellow-dark;
+      background-color: color.adjust($yellow-light, $lightness: 10%);
+    }
+  }
+  label {
+    display: inline-block;
+    margin-right: 20px;
+    padding: 2px 12px;
+    border-radius: 20px;
+    border: 3px solid color.adjust($yellow-light, $lightness: -10%);
+    background-color: color.adjust($yellow-light, $lightness: -10%);
+    color: black;
+    cursor: pointer;
   }
 }
 
@@ -123,7 +152,7 @@ input {
   }
 }
 
-.clearBtnContainer {
+.ResetAllContainer {
   display: flex;
   justify-content: center;
   padding-top: 30px;
@@ -131,35 +160,5 @@ input {
     width: 100px;
     padding-top: 10px;
     padding-bottom: 10px;
-  }
-}
-
-.filtersContainer {
-  fieldset {
-    text-align: center;
-    border: 2px groove $yellow-dark;
-    border-radius: 10px;
-    legend {
-      padding: 0 10px;
-      color: $yellow-light;
-      font-size: 18px;
-    }
-    input {
-      display: none;
-      &:checked + label {
-        border-color: $yellow-dark;
-        background-color: color.adjust($yellow-light, $lightness: 10%);
-      }
-    }
-    label {
-      display: inline-block;
-      margin-right: 20px;
-      padding: 2px 12px;
-      border-radius: 20px;
-      border: 3px solid color.adjust($yellow-light, $lightness: -10%);
-      background-color: color.adjust($yellow-light, $lightness: -10%);
-      color: black;
-      cursor: pointer;
-    }
   }
 }
